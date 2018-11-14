@@ -1,0 +1,18 @@
+結果
+ result=area_or_volume(2)
+result =  12.566
+>> result=area_or_volume(2,3)
+result =  37.699
+>> result=area_or_volume(2,3,5)
+error: too many input arguments
+error: called from
+    area_or_volume at line 3 column 1
+
+程式碼
+function result=area_or_volume(radius,height)
+msg=nargchk(1,2,nargin);
+error(msg);
+  if nargin==1
+    height=1;
+  endif;
+  result=pi*(radius)^2*height;

@@ -1,0 +1,9 @@
+function [r,theta]=rec_to_polar(x,y)
+  msg=nargchk(1,2,nargin);
+  error(msg);
+  if nargin==1
+    y=0;
+  endif
+  r=sqrt(x^2+y^2);
+  theta=atan2(y,x)*180/pi;
+endfunction
