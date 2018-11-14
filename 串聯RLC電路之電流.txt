@@ -1,0 +1,21 @@
+f=100000:50000:10000000;
+vs=120;
+c=0.25e-9;
+l=0.1e-3;
+r=100;
+
+w=2*pi*f;
+
+%Calculate output current
+io=vs./(r+j*2*pi*f*l-j./(2*pi*f*c));
+
+%Calculate phase
+phase=angle(io)*180/pi;
+
+%plot
+subplot(2,1,1);
+semilogx(f,abs(io),'LineWidth',2);
+grid on;
+subplot(2,1,2);
+semilogx(f,phase,'LineWidth',2);
+grid on;
