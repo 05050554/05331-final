@@ -1,0 +1,26 @@
+function s=t(first,last,dx,func1,func2,func3)
+  msg=nargchk(0,6,nargin);
+  error(msg);
+  x=first:dx:last;
+  y=feval(func1,x);
+  plot(x,y,'b-');
+  hold on;
+  y=feval(func2,x);
+  plot(x,y,'k--');
+  hold on;
+  y=feval(func3,x);
+  plot(x,y,'r:');
+endfunction
+
+
+%function y=f1(x)
+%y=(e.^x-e.^-x)./2;
+
+%function y=f2(x)
+% y=(e.^x+e.^-x)./2;
+
+%function y=f3(x)
+%y=(e.^x-e.^-x)./(e.^x+e.^-x);
+
+%¿é¥X
+% s=t(-2,2,0.1,'f1','f2','f3')
