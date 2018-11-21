@@ -1,4 +1,4 @@
-unction [xmin,ymin,xmax,ymax]=extreme(first,last,num_steps,func)
+function [xmin,ymin,xmax,ymax]=extreme(first,last,num_steps,func)
   %num_steps 搜尋點數
   %func 函數名稱
   msg=nargchk(4,4,nargin);
