@@ -22,5 +22,5 @@ endfunction
 %function y=f3(x)
 %y=(e.^x-e.^-x)./(e.^x+e.^-x);
 
-%¿é¥X
+%è¼¸å‡º
 % s=t(-2,2,0.1,'f1','f2','f3')
