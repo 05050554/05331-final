@@ -1,0 +1,17 @@
+clear all;
+close all;
+
+c=input('Enter a string:',"S");
+d=input('Enter a character:',"S");
+count=0;
+for i=1:length(c);
+%strcmp決定兩個字串是否完全相同。
+%strcmpi決定兩個字串是否完全相同，但忽略其大小寫的差異。
+%strncmp決定兩個字串的前n個字元是否完全相同。
+%strncmpi決定兩個字串的前n個字元是否完全相同，但忽略其大小寫的差異。
+  if strncmpi(c(i),d,1) 
+      count=count+1;
+  endif
+endfor
+
+printf('%d times\n',count);
