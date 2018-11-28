@@ -1,0 +1,13 @@
+clear all;
+close all;
+
+%z=e^{x+iy}
+%0<=x<=2 d=0.1
+
+x=0:0.1:2;
+y=exp(-x).*sin(x);
+
+stem(x,y);
+figure,stairs(x,y);
+figure,bar(x,y);
+figure,compass(x,y);
