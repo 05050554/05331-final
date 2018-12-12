@@ -1,0 +1,23 @@
+clear all;
+close all;
+%y'=f(t,y)
+%[t,y]=ode45(odefun_handle,tspau,yo,options)
+%t->y對應之時間  y->解y  odefun_handle->f(t,y)之函數握把 
+%tspau->[to tend]積分之起點與終點  options->需要時才用
+
+%解(dy/dt)+2y=0; y(0)=1
+%解y'=(dy/dt)=-2y
+%主程式
+hndl=@fun1;
+tspau=[0,5]; %0~5 積分範圍自訂 
+yo=1;
+[t,y]=ode45(hndl,tspau,yo);
+plot(t,y);
+grid on;
+%橫軸時間
+%縱軸y值
+
+%fun1函式
+%function yprime=fun1(t,y)
+% yprime=-2*y;
+%endfunction
