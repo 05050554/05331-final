@@ -13,3 +13,5 @@ clear all;
     endif
   endfor
 endfunction
+%測試
+%bytes =dir_size('資料夾名')
