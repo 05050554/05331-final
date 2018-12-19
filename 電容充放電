@@ -1,0 +1,40 @@
+clear all;
+close all;
+
+%R=1M;
+%c=1u;
+%Vin(t)=0;
+%t<=0;
+%t>=6;
+%(vo(t)-vi(t))/R+c.*d*vo(t)/dt
+
+%主程式
+hndl=@fun2;
+tspau=[0,10]; %0~5 積分範圍自訂 
+yo=0;
+[t,y]=ode45(hndl,tspau,yo);
+plot(t,y);
+grid on;
+
+%fun2
+%function yprime=fun2(t,y)
+%  R=1e6;
+%  C=1e-6;
+%  lumda=1/(R*C);
+% yprime=lumda*Vin(t)-lumda*y;
+%endfunction
+
+%Vin
+%function V=Vin(t)
+%  if(t>=0&&t<=6)
+%    if(mod(floor(t),2)==0)
+%      V=1;
+%   else
+%      V=-1;
+%    end
+%  else
+%    V=0;
+%  end 
+%endfunction
+
+%結果是三次充放電
