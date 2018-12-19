@@ -1,0 +1,16 @@
+clear all;
+close all;
+fprintf('Tavle of Square Roots,Squares, and Cubes\n\n');
+%        邊       開根號        面積        體積
+fprintf('Number  Square Root  Square     Cube\n');
+fprintf('======  ===========  ======     ====\n');
+
+ii=1:10;
+square_root=sqrt(ii);
+square=ii.^2;
+cube=ii.^3;
+out=[ii' square_root' square' cube'];
+
+for ii=1:10
+  fprintf('  %2d  %11.4f  %6d  %8d\n',out(ii,:));
+  end
