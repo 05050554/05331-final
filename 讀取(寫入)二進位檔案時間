@@ -1,0 +1,39 @@
+clear all;
+close all;
+
+out_array=randn(1,10000);
+tic;
+for ii=1:10
+  [fid,msg]=fopen('unformatted.dat','w'); %無格式化檔案 寫入dat(二進位)
+  count=fwrite(fid,out_array,'float64');
+  status=fclose(fid);
+end
+time=toc/10;
+fprintf('Write time for unformatted file = %6.3f\n',time);
+
+
+tic;
+for ii=1:10
+  [fid,msg]=fopen('formatted.dat','wt'); %格式化檔案 寫入
+  count=fprintf(fid,'%23.15e\n',out_array);
+  status=fclose(fid);
+end
+time=toc/10;
+fprintf('Write time for formatted file = %6.3f\n',time);
+
+tic;
+for ii=1:10
+  [fid,msg]=fopen('formatted.dat','r'); %無格式化檔案 讀取dat(二進位)
+  [in_array,count]=fread(fid,inf,'float64');
+  status=fclose(fid);
+end
+time=toc/10;
+fprintf('Read time for formatted file = %6.3f\n',time);
+
+for ii=1:10
+  [fid,msg]=fopen('formatted.dat','rt'); %格式化檔案 讀取
+  [in_array,count]=fscanf(fid,'%f',inf);
+  status=fclose(fid);
+end
+time=toc/10;
+fprintf('Read time for formatted file = %6.3f\n',time);
