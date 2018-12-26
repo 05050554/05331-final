@@ -1,0 +1,9 @@
+clear all;
+close all;
+
+[y,fs]=audioread('welcome.wav');%讀取音訊
+%if fs=10Hz ->10個資料點
+
+sound(1*y,fs); %播放此音訊
+sound(3*y,fs); %2倍振福播放此音訊
+sound(5*y,fs); %3倍振福播放此音訊
