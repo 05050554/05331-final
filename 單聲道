@@ -1,0 +1,12 @@
+clear all;
+close all;
+
+[y,fs]=audioread('test.wav');%讀取音訊
+%if fs=10Hz ->10個資料點
+
+sound(y,fs);%播放此音訊
+
+time=(1:length(y))/fs; %時間軸的向量
+%y=[1 2 3.....10]/10
+
+plot(time,y); %畫出時間軸上的波形
