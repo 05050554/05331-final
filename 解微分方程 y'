@@ -21,3 +21,22 @@ grid on;
 %function yprime=fun1(t,y)
 % yprime=-2*y;
 %endfunction
+-----------------------------NEW---------------------------------------
+clear all;
+close all;
+%d(v)/dt+v(t)={t 0<=t<=5 0=else
+%y'=f(t,y)
+%主程式
+[t,y]=ode45(@fun1,[0 10],0); %0~10自己抓的非題目要求
+plot(t,y);
+grid on;
+
+%fun1函式
+function vp=fun1(t,v)
+  if t>=0 & t<=5
+    vp=-v+t;
+   else
+    vp=-v;
+   endif
+endfunction
+
